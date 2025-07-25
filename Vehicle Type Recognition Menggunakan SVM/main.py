@@ -109,21 +109,21 @@ evaluate(y_test, y_pred_rbf, "SVM RBF", le)
 visualize_predictions(y_test, y_pred_rbf, img_test, "SVM RBF", le)
 
 # melakukan training menggunakan model kernel Linear
-print("\nMemulai training menggunakan model kernel Linear...")
+# print("\nMemulai training menggunakan model kernel Linear...")
 
-param_grid_linear = {
-    'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
-    'kernel': ['linear']
-}
-svm_linear = GridSearchCV(SVM(), param_grid_linear, cv=3)
-svm_linear.fit(X_train, y_train)
-y_pred_linear = svm_linear.predict(X_test)
+# param_grid_linear = {
+#     'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
+#     'kernel': ['linear']
+# }
+# svm_linear = GridSearchCV(SVM(), param_grid_linear, cv=3)
+# svm_linear.fit(X_train, y_train)
+# y_pred_linear = svm_linear.predict(X_test)
 
-print("\nParameter terbaik (Linear):", svm_linear.best_params_)
+# print("\nParameter terbaik (Linear):", svm_linear.best_params_)
 
-# evaluasi dan visualisasi prediksi model kernel Linear
-evaluate(y_test, y_pred_linear, "SVM Linear", le)
-visualize_predictions(y_test, y_pred_linear, img_test, "SVM Linear", le)
+# # evaluasi dan visualisasi prediksi model kernel Linear
+# evaluate(y_test, y_pred_linear, "SVM Linear", le)
+# visualize_predictions(y_test, y_pred_linear, img_test, "SVM Linear", le)
 
 # menyimpan hasil training dan label encoder dari model terbaik
 with open("svm_model.pkl", "wb") as f:
